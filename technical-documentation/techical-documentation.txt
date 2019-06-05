@@ -1,0 +1,23 @@
+Technical Documentation
+
+Zoltan Almodo - Software Imaging - 
+
+
+Task / Problem:
+Write a program that calculates the points on a cubic Bezier curve,
+given four control points and the number of intervals.
+
+Requirements:
+Take as input 4 control points and the number of intervals.
+Generate as output cubic Bezier points for values of t between 0 and 1
+(0 and 1 included) using the input parameters.
+
+breaking down the problem.
+1- understanding bezier curves:
+"https://www.freecodecamp.org/news/nerding-out-with-bezier-curves-6e3c0bc48e2f/"
+"https://www.freecodecamp.org/news/nerding-out-with-bezier-curves-6e3c0bc48e2f/"
+"https://javascript.info/bezier-curve"
+
+
+
+
