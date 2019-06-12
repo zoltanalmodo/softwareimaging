@@ -7,14 +7,14 @@ export default class App extends React.Component {
 
   state = {
     curveIntervals: 50,
-    startPointX: 20,
+    startPointX: 10,
     startPointY: 400,
-    firstControlPointX: 20,
-    firstControlPointY: 20,
+    firstControlPointX: 10,
+    firstControlPointY: 10,
     secondControlPointX: 400,
     secondControlPointY: 400,
     endPointX: 400,
-    endPointY: 20,
+    endPointY: 10,
   }
   onClick = (e) => {
     this.setState({ [e.target.id]: e.target.value })
