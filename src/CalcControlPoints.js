@@ -9,16 +9,16 @@ export default class CalcControlPoints extends React.Component {
     }
 
     CalcControlPoints(t, p0, p1, p2, p3) {
-        var cX = 3 * (p1.x - p0.x),
+        let cX = 3 * (p1.x - p0.x),
             bX = 3 * (p2.x - p1.x) - cX,
             aX = p3.x - p0.x - cX - bX;
 
-        var cY = 3 * (p1.y - p0.y),
+        let cY = 3 * (p1.y - p0.y),
             bY = 3 * (p2.y - p1.y) - cY,
             aY = p3.y - p0.y - cY - bY;
 
-        var x = (aX * Math.pow(t, 3)) + (bX * Math.pow(t, 2)) + (cX * t) + p0.x;
-        var y = (aY * Math.pow(t, 3)) + (bY * Math.pow(t, 2)) + (cY * t) + p0.y;
+        let x = (aX * Math.pow(t, 3)) + (bX * Math.pow(t, 2)) + (cX * t) + p0.x;
+        let y = (aY * Math.pow(t, 3)) + (bY * Math.pow(t, 2)) + (cY * t) + p0.y;
 
         return { x: x, y: y };
     }
@@ -62,8 +62,8 @@ export default class CalcControlPoints extends React.Component {
 
         this.ctx.beginPath()
         this.ctx.moveTo(p0.x, p0.y);
-        for (var t = 0; t <= 1; t += (1 / Math.round(intervals))) {
-            var point = this.CalcControlPoints(t, p0, p1, p2, p3);
+        for (let t = 0; t <= 1; t += (1 / Math.round(intervals))) {
+            let point = this.CalcControlPoints(t, p0, p1, p2, p3);
             this.ctx.lineTo(point.x, point.y);
         }
 

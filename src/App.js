@@ -16,15 +16,14 @@ export default class App extends React.Component {
     endPointX: 400,
     endPointY: 10,
   }
+
   onClick = (e) => {
     this.setState({ [e.target.id]: e.target.value })
   }
 
-
   onChange = (e) => {
     this.setState({ [e.target.id]: e.target.value })
   }
-
 
   render() {
     return (

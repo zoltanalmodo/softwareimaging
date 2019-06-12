@@ -1,6 +1,6 @@
 Technical Documentation
 
-Zoltan Almodo - Software Imaging - 
+Zoltan Almodo - Software Imaging - cubic Bezier curve.
 
 
 Task / Problem:
@@ -12,12 +12,44 @@ Take as input 4 control points and the number of intervals.
 Generate as output cubic Bezier points for values of t between 0 and 1
 (0 and 1 included) using the input parameters.
 
-breaking down the problem.
-1- understanding bezier curves:
+Breaking down the problem.
+1-> understanding bezier curves:
 "https://www.freecodecamp.org/news/nerding-out-with-bezier-curves-6e3c0bc48e2f/"
 "https://www.freecodecamp.org/news/nerding-out-with-bezier-curves-6e3c0bc48e2f/"
 "https://javascript.info/bezier-curve"
 
+2-> finding useable code:
+Because I had to create an input for segments "intervals" i could not use
+the canvas bezierCurveTo() method.
+
+>>>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(20, 20);
+ctx.bezierCurveTo(20, 100, 200, 100, 200, 20);
+ctx.stroke();
+<<<
+
+I found this on stackoverflow:
+"https://stackoverflow.com/questions/16227300/
+how-to-draw-bezier-curves-with-native-javascript-code-without-ctx-beziercurveto"
+and jsfiddle:
+"http://jsfiddle.net/fQYsU/"
+
+
+3-> drawing on canvas in React
+How to draw on canvas in React.js
+HTML5 <canvas> element is a DOM element react avoids touching the DOM
+To draw on the canvas we need to get a context with wich we draw.
+And we need to call ctx on the canvas element itself to draw.
+"https://philna.sh/blog/2018/09/27/techniques-for-animating-on-the-canvas-in-react/"
+
+4-> Building the form using Reactstrap:
+Looked a god choice as it manages the state, I can add initial values
+and it handles updates as well.
+
+5-> conecting form and values with state and control point Calculation.
 
 
 
