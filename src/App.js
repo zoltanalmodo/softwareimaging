@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import CalcControlPoints from './CalcControlPoints';
 
 export default class App extends React.Component {
 
   state = {
-    curveIntervals: 50,
+    curveIntervals: 5,
     startPointX: 10,
     startPointY: 400,
     firstControlPointX: 10,
@@ -15,11 +15,10 @@ export default class App extends React.Component {
     secondControlPointY: 400,
     endPointX: 400,
     endPointY: 10,
+    returnedPoints: [], 
   }
 
-  onClick = (e) => {
-    this.setState({ [e.target.id]: e.target.value })
-  }
+
 
   onChange = (e) => {
     this.setState({ [e.target.id]: e.target.value })
@@ -184,16 +183,10 @@ export default class App extends React.Component {
             </Col>
           </FormGroup>
           
-          
-
-          <FormGroup check row>
-            <Col sm={{ size: 4, offset: 8 }}>
-              <Button onClick={this.onClick} >Draw</Button>
-            </Col>
-          </FormGroup>
         </Form>
 
         <CalcControlPoints points = {this.state} />
+        {/* display returnedPoints from state */}
       </React.Fragment>
 
     );

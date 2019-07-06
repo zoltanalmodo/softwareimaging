@@ -30,6 +30,7 @@ export default class CalcControlPoints extends React.Component {
         this.ctx.lineWidth = 2;
         this.ctx.strokeStyle = "green";
         document.body.appendChild(this.ctx.canvas);
+        this.draw();
 
     }
 
@@ -62,10 +63,15 @@ export default class CalcControlPoints extends React.Component {
 
         this.ctx.beginPath()
         this.ctx.moveTo(p0.x, p0.y);
+        
         for (let t = 0; t <= 1; t += (1 / Math.round(intervals))) {
+            let returnedPoints = []
             let point = this.CalcControlPoints(t, p0, p1, p2, p3);
+            returnedPoints.push(point.x, point.y);
             this.ctx.lineTo(point.x, point.y);
         }
+
+        // put returnedPoints to state !!!
 
         this.ctx.stroke()
 
